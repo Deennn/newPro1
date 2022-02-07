@@ -1,14 +1,17 @@
 package Services;
 
 //import Model.Cart;
+import Enums.Category;
 import Model.Product;
 import Model.Store;
 
 import java.util.List;
 
 public interface CustomerServices {
-    void addProductToCart(Product product, Store store, List<Product> cart);
-    void removeProductFromCart (Product product, Store store, Cart cart);
-    void viewProduct(int productId, Store store);
-    void viewProducts(int productId, Store store);
+    void addProductToCart(int productId, int quantity, Store store);
+    void removeProductFromCart (int productId, int quantity, Store store);
+    void viewProducts(Store store);
+    void viewProductsByCategory(Category category, Store store);
+    void checkout(Store store);
+    void printReceipt(String data,String name,int time);
 }

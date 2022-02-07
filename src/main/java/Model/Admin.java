@@ -38,7 +38,7 @@ public class Admin extends Person implements AdminServices {
         List <Product> list = store.getProductList();
         list.add(product);
         store.setProductList(list);
-        System.out.println("--------------------------------------------------------------" + product.getName() + " has been added to Store successfully----------------------------------------------------------------------------");
+        System.out.println("--------------------------------------" + product.getName() + " has been added to Store successfully-------");
     }
 
     @Override
@@ -55,9 +55,9 @@ public class Admin extends Person implements AdminServices {
             Product product = list.get(proId);
             list.remove(product);
             store.setProductList(list);
-            System.out.println("--------------------------------------------------------------" + product.getName() + " has been removed from Store successfully--------------------------------------------------------------------------");
+            System.out.println("---------------------------------------" + product.getName() + " has been removed from Store successfully-----");
         }else{
-            System.out.println("--------------------------------------------------------------" + " Product does not exist in Store " + "--------------------------------------------------------------------------");
+            System.out.println("---------------------------------------" + " Product does not exist in Store " + "-----");
         }
 
 
@@ -76,9 +76,9 @@ public class Admin extends Person implements AdminServices {
         if(proId != 0) {
             Product product = list.get(proId);
             System.out.println(product);
-            //System.out.println("--------------------------------------------------------------" + product.getName() + " has been removed successfully--------------------------------------------------------------------------");
+            System.out.println("----------------------------------" + product.getName() + " can be viewed in Store--------------------------------------------------------------------------");
         }else{
-            System.out.println("--------------------------------------------------------------" + " Product does not exist " + "--------------------------------------------------------------------------");
+            System.out.println("----------------------------------" + " Product does not exist in Store" + "--------------------------------------------------------------------------");
         }
     }
 
