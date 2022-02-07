@@ -1,0 +1,22 @@
+package Model;
+
+public abstract class Person {
+    private String name;
+
+    Person(String name){
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+
+    //public abstract void addProductToCart(Product product, Store store, Cart cart);
+
+    //public abstract void removeProductFromCart(Product product, Store store, Cart cart);
+}
