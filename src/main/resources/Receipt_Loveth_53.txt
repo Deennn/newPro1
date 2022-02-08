@@ -1,0 +1,5 @@
+2022-02-09
+name = Loveth
+Gucci Chair = Price : 50000.0,  Quantity : 8, Category : FURNITURE
+Total Amount = 400000.0
+Success 

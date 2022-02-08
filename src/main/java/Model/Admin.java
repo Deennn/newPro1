@@ -22,10 +22,6 @@ public class Admin extends Person implements AdminServices {
         this.id = id;
     }
 
-
-
-
-
     @Override
     public String toString() {
         return "Admin{" +
@@ -44,14 +40,14 @@ public class Admin extends Person implements AdminServices {
     @Override
     public void removeProductFromStore( int id, Store store) {
         List <Product> list = store.getProductList();
-        int proId = 0;
+        int proId = -1;
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getId() == id) {
                 proId = i;
                 break;
             }
         }
-        if(proId != 0) {
+        if(proId >= 0) {
             Product product = list.get(proId);
             list.remove(product);
             store.setProductList(list);
@@ -59,21 +55,19 @@ public class Admin extends Person implements AdminServices {
         }else{
             System.out.println("---------------------------------------" + " Product does not exist in Store " + "-----");
         }
-
-
     }
 
     @Override
     public void viewProductInStore(int id, Store store) {
         List <Product> list = store.getProductList();
-        int proId = 0;
+        int proId = -1;
         for (int i = 0; i < list.size(); i++) {
             if (list.get(i).getId() == id) {
                 proId = i;
                 break;
             }
         }
-        if(proId != 0) {
+        if(proId >= 0) {
             Product product = list.get(proId);
             System.out.println(product);
             System.out.println("----------------------------------" + product.getName() + " can be viewed in Store--------------------------------------------------------------------------");
@@ -81,14 +75,4 @@ public class Admin extends Person implements AdminServices {
             System.out.println("----------------------------------" + " Product does not exist in Store" + "--------------------------------------------------------------------------");
         }
     }
-
-    /*@Override
-    public void addProductToCart(Product product, Store store, Cart cart) {
-
-    }
-
-    @Override
-    public void removeProductFromCart(Product product, Store store, Cart cart) {
-
-    }*/
 }

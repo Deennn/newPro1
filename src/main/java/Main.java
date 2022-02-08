@@ -15,23 +15,10 @@ public class Main {
         Product chair2 = new Product ("Gucci Chair 2",05, Brand.GUCCI, Category.FURNITURE,50_000,10);
         Product watch1 = new Product ("Swatch watch",06, Brand.SWATCH, Category.ACCESSORIES,10_000,10);
         Johnny.addProductToStore(phone1,store);
-        //System.out.println(store.getProductList());
-        Johnny.addProductToStore(chair1,store);
         Johnny.addProductToStore(watch1,store);
-        //System.out.println(store.getProductList());
-        //Johnny.removeProductFromStore(04,store);
-        // System.out.println(store.getProductList());
-        //Johnny.removeProductFromStore(07,store);
-        //System.out.println(store.getProductList());
-        //Johnny.viewProductInStore(05,store);
-        Loveth.addProductToCart(watch1.getId(),5,store);
-        System.out.println(Loveth.getCart());
-        Loveth.addProductToCart(chair2.getId(),8,store);
-//        System.out.println(Loveth.getCart());
-        Loveth.removeProductFromCart(watch1.getId(),2,store);
-        System.out.println(Loveth.getCart());
-        Loveth.viewProducts(store);
-        Loveth.viewProductsByCategory(Category.FURNITURE, store);
-        Loveth.checkout(store);
+        //Johnny.removeProductFromStore(phone1.getId(),store);
+        Loveth.addProductToCart(06,1,store);
+        Loveth.removeProductFromCart(06,1,store);
+        //Johnny.viewProductInStore(03,store);
     }
 }
