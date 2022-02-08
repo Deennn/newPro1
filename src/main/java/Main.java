@@ -6,6 +6,7 @@ public class Main {
     public static void main(String[] args) {
         //System.out.println("welcome");
         Store store = new Store();
+        //store.displayMissionTxt();
         //Cart cart = new Cart();
         Admin Johnny = new Admin("Johnny",01);
         Customer Loveth = new Customer("Loveth",02,5_000_000.00);
