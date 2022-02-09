@@ -1,0 +1,8 @@
+2022-02-08
+Customer name = Loveth
+Product name :  Swatch watch         
+          Price : 10000.0
+          Quantity : 3
+          Category : ACCESSORIES
+          Total Amount : 30000.0
+                       Success 
