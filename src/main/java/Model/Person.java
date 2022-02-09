@@ -3,7 +3,7 @@ package Model;
 public abstract class Person {
     private String name;
 
-    Person(String name){
+    public Person(String name) {
         this.name = name;
     }
 
@@ -14,7 +14,6 @@ public abstract class Person {
     public void setName(String name) {
         this.name = name;
     }
-
 
     //public abstract void addProductToCart(Product product, Store store, Cart cart);
 

@@ -38,11 +38,14 @@ public class CustomerTest {
         //System.out.println(store.getProductList());
         //Johnny.viewProductInStore(05,store);
         Loveth.addProductToCart(watch1.getId(),5,store);
-        System.out.println(Loveth.getCart());
-        Loveth.addProductToCart(chair2.getId(),8,store);
 //        System.out.println(Loveth.getCart());
-        Loveth.removeProductFromCart(watch1.getId(),2,store);
+//        Loveth.addProductToCart(chair1.getId(),8,store);
+//        System.out.println(Loveth.getCart());
+//        Loveth.removeProductFromCart(watch1.getId(),5,store);
+//        Loveth.removeProductFromCart(chair1.getId(),8,store);
         System.out.println(Loveth.getCart());
+//        Loveth.removeProductFromCart(chair1.getId(),2,store);
+//        System.out.println(Loveth.getCart());
         Loveth.viewProducts(store);
         Loveth.viewProductsByCategory(Category.FURNITURE, store);
         Loveth.checkout(store);
@@ -50,25 +53,34 @@ public class CustomerTest {
 
     @Test
     public void addProductToCart() {
-        Loveth.addProductToCart(watch1.getId(),2,store);
-        Loveth.addProductToCart(chair1.getId(),2,store);
+//        Loveth.addProductToCart(watch1.getId(),2,store);
+//        Loveth.addProductToCart(chair1.getId(),2,store);
         assertEquals(Loveth.getCart().size(),2);
     }
 
     @Test
     public void removeProductFromCart() {
+//        //Loveth.removeProductFromCart(watch1.getId(),2,store);
+//        Loveth.removeProductFromCart(watch1.getId(),5,store);
+//        Loveth.removeProductFromCart(chair1.getId(),8,store);
+//
+        assertEquals(Loveth.getCart().size(),0);
     }
 
     @Test
     public void viewProducts() {
+        assertEquals(Loveth.getCart().size(),1);
     }
 
     @Test
     public void viewProductsByCategory() {
+
     }
 
     @Test
     public void checkout() {
+        assertEquals(Loveth.getCart().size(),0);
+        assertEquals(store.account,watch1.getPrice() * watch1.getQuantity(),0.00001);
     }
 
     @Test
