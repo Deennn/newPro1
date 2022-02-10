@@ -3,8 +3,7 @@ package Model;
 import Enums.Category;
 import Services.CustomerServices;
 
-import java.io.FileWriter;
-import java.io.Writer;
+import java.io.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.*;
@@ -148,8 +147,8 @@ public class Customer extends Person implements CustomerServices {
         for (Product product : listOfProducts) {
             int initialQuantity = this.cart.get(product);
             totalAmount = product.getPrice() * initialQuantity;
-            store.account += totalAmount;
-            this.cart.clear();
+            store.account = totalAmount;
+
 
             for (Product product1 : list) {
                 if (product1 == product) {
@@ -164,15 +163,16 @@ public class Customer extends Person implements CustomerServices {
             data.append(LocalDate.now()).append("\n");
             data.append("name = ").append(this.getName()).append("\n");
             for(Map.Entry<Product, Integer> item: this.cart.entrySet()){
-                data.append(item.getKey().getName()).append(" = ").append("Price : ").append(item.getKey().getPrice()).append(",  Quantity : ").append(item.getValue()).append(", Category : ").append(item.getKey().getCategories() + "\n");
+                data.append("product name =   "+item.getKey().getName()).append("\n").append("            Price :   ").append(item.getKey().getPrice()+"\n").append("            Quantity : ").append(item.getValue()+"\n").append("            Category : ").append(item.getKey().getCategories() + "\n");
             }
-            data.append("Total Amount = ").append(totalAmount).append("\n").append("Success ");
+            data.append("            Total Amount = ").append(totalAmount).append("\n").append("\nSuccess ");
             this.printReceipt(String.valueOf(data),this.getName(),LocalDateTime.now().getSecond());
             System.out.println("----------------- Products have been purchased!!! ---------------");
 
         } else {
             System.out.println("----------------- Insufficient Funds!!! HUSTLE HARDER!!! ---------------");
         }
+        this.cart.clear();
     }
 
     @Override
@@ -182,7 +182,7 @@ public class Customer extends Person implements CustomerServices {
         try {
             // Creates a Writer using FileWriter
             String fileName = "Receipt"+"_"+name+"_"+time+".txt";
-            Writer output = new FileWriter("/Users/decagon/IdeaProjects/Decagon/JohnnyAndCoStores/src/main/resources/"+fileName);
+            Writer output = new FileWriter("/Users/user/Desktop/E-commerce/JohnnyAndCoClothing/src/main/resources/"+fileName);
 
             output.write(data);
 
@@ -192,4 +192,6 @@ public class Customer extends Person implements CustomerServices {
             e.getStackTrace();
         }
     }
+
+
 }

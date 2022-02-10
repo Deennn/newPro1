@@ -1,4 +1,5 @@
 2022-02-09
 name = Loveth
-Total Amount = 50000.0
+            Total Amount = 0.0
+
 Success 

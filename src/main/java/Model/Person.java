@@ -15,6 +15,8 @@ public abstract class Person {
         this.name = name;
     }
 
+
+
     //public abstract void addProductToCart(Product product, Store store, Cart cart);
 
     //public abstract void removeProductFromCart(Product product, Store store, Cart cart);

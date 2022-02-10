@@ -19,7 +19,8 @@ public class CustomerTest {
     @Before
     public void setUp() throws Exception {
         //System.out.println("welcome");
-        store = new Store();
+        String storeName;
+//        store = new Store(storeName);
         //Cart cart = new Cart();
         Johnny = new Admin("Johnny",01);
         Loveth = new Customer("Loveth",02,5_000_000.00);
@@ -37,12 +38,11 @@ public class CustomerTest {
         //Johnny.removeProductFromStore(07,store);
         //System.out.println(store.getProductList());
         //Johnny.viewProductInStore(05,store);
-        Loveth.addProductToCart(watch1.getId(),5,store);
+
 //        System.out.println(Loveth.getCart());
-//        Loveth.addProductToCart(chair1.getId(),8,store);
+//
 //        System.out.println(Loveth.getCart());
-//        Loveth.removeProductFromCart(watch1.getId(),5,store);
-//        Loveth.removeProductFromCart(chair1.getId(),8,store);
+//
         System.out.println(Loveth.getCart());
 //        Loveth.removeProductFromCart(chair1.getId(),2,store);
 //        System.out.println(Loveth.getCart());
@@ -53,23 +53,26 @@ public class CustomerTest {
 
     @Test
     public void addProductToCart() {
-//        Loveth.addProductToCart(watch1.getId(),2,store);
-//        Loveth.addProductToCart(chair1.getId(),2,store);
-        assertEquals(Loveth.getCart().size(),2);
+        Loveth.addProductToCart(chair1.getId(),8,store);
+        Loveth.addProductToCart(watch1.getId(),5,store);
+        assertEquals(2,Loveth.getCart().size());
+        assertNotEquals(0,Loveth.getCart().size());
     }
 
     @Test
     public void removeProductFromCart() {
-//        //Loveth.removeProductFromCart(watch1.getId(),2,store);
-//        Loveth.removeProductFromCart(watch1.getId(),5,store);
-//        Loveth.removeProductFromCart(chair1.getId(),8,store);
-//
-        assertEquals(Loveth.getCart().size(),0);
+        Loveth.addProductToCart(chair1.getId(),8,store);
+        Loveth.addProductToCart(watch1.getId(),5,store);
+        Loveth.removeProductFromCart(watch1.getId(),5,store);
+        Loveth.removeProductFromCart(chair1.getId(),7,store);
+        assertEquals(0, Loveth.getCart().size());
     }
 
     @Test
     public void viewProducts() {
-        assertEquals(Loveth.getCart().size(),1);
+        Loveth.addProductToCart(chair1.getId(),8,store);
+        Loveth.addProductToCart(watch1.getId(),5,store);
+        assertEquals(Loveth.getCart().size(),2);
     }
 
     @Test
@@ -79,8 +82,11 @@ public class CustomerTest {
 
     @Test
     public void checkout() {
-        assertEquals(Loveth.getCart().size(),0);
-        assertEquals(store.account,watch1.getPrice() * watch1.getQuantity(),0.00001);
+
+        Loveth.addProductToCart(watch1.getId(),5,store);
+//        assertEquals(Loveth.getCart().size(),0);
+        assertEquals(watch1.getPrice() * watch1.getQuantity(),this.store.account,0.00000001);
+//        assertEquals(Loveth.getWallet()-store.account,Loveth.getWallet() );
     }
 
     @Test

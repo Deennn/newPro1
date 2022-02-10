@@ -1,6 +1,5 @@
-2022-02-08
+2022-02-09
 name = Loveth
-Swatch watch = Price : 10000.0,  Quantity : -5, Category : ACCESSORIES
-Gucci Chair = Price : 50000.0,  Quantity : -8, Category : FURNITURE
-Total Amount = -400000.0
+            Total Amount = 0.0
+
 Success 
